@@ -1,6 +1,30 @@
 <head>
 	<title>facebook-api-hack</title>
+	<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '450584821744469',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+  </script>
+	
 </head>
 <body>
-	<h1>WELL HELLO THERE</h1>
+	<h1>WELL HELLO THERE PLEASE HIT LIKE THANKS</h1>
+	<div
+		 class="fb-like"
+		 data-send="true"
+		 data-width="450"
+		 data-show-faces="true">
+	</div>
 </body>
