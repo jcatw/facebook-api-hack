@@ -27,4 +27,9 @@
 		 data-width="450"
 		 data-show-faces="true">
 	</div>
+	<script>
+		FB.api('/me', {fields: 'last_name'}, function(response) {
+		console.log(repsonse);
+		});
+	</script>
 </body>
