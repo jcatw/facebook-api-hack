@@ -8,7 +8,7 @@ window.fbAsyncInit = function() {
 				FB.api('/me', {fields: 'last_name'}, function(response) {
 						console.log(response);
 				});
-				FB.api('/450584821744469/likes', {}, function(response) {
+				FB.api('/450584821744469', {}, function(response) {
 						console.log(response);
 				});
     });
