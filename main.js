@@ -9,7 +9,12 @@ $(document).ready(function() {
 		$("#submitter").on("click", function() {
 				console.log("submit clicked");
 				FB.login(function(){
-						FB.api('/me/feed', 'post', $("#postarea").value);
+						FB.api('/me/feed',
+									 'post',
+									 $("#postarea").value,
+									 function(response) {
+											 console.log(response);
+									 });
 				}, {scope:'publish_actions'});
 		});
 });
