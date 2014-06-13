@@ -11,7 +11,7 @@ $(document).ready(function() {
 				FB.login(function(){
 						FB.api('/me/feed',
 									 'post',
-									 {message: $("#postarea").value},
+									 {message: $("#postarea").val()},
 									 function(response) {
 											 console.log(response);
 									 });
