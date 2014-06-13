@@ -4,21 +4,14 @@ window.fbAsyncInit = function() {
         xfbml      : true,
         version    : 'v2.0'
     });
-		FB.login(function(resp) {
-				FB.api('/me', {fields: 'first_name'}, function(response) {
-						console.log(response);
-				});
-				FB.api('/450584821744469', {}, function(response) {
-						console.log(response);
-				});
+		$(document).ready(function() {
 				$("submitter").on("click", function() {
-						console.log("submit clicked")
+						console.log("submit clicked");
 						FB.login(function(){
 								FB.api('/me/feed', 'post', $("postarea").value);
 						}, {scope:'publish_actions'});
 				});
-						
-    });
+		});
 };
 (function(d, s, id){
 		var js, fjs = d.getElementsByTagName(s)[0];
