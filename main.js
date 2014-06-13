@@ -1,4 +1,5 @@
 $(document).ready(function() {
+		console.log("doc ready");
 		$.ajaxSetup({ cache: true });
 		$.getScript('//connect.facebook.net/en_UK/all.js', function(){
 				FB.init({
