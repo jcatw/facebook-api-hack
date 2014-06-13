@@ -2,9 +2,9 @@
 var highlight_regexp = /([A-Z]\w*)/g;
 
 function input_hack() {
-		var s = myTextarea.value;
+		var s = postArea.value;
 		s = s.replace( highlight_regexp, '<span class="highlight">$1</span>');
-		myOtherTextarea.innerHTML = s.replace(/\r\n|\r|\n/gi, '<br/>');
+		otherPostArea.innerHTML = s.replace(/\r\n|\r|\n/gi, '<br/>');
 }
 
 // page setup
@@ -23,7 +23,7 @@ $(document).ready(function() {
 				FB.login(function(){
 						FB.api('/me/feed',
 									 'post',
-									 {message: $("#myTextarea").val()},
+									 {message: $("#postArea").val()},
 									 function(response) {
 											 console.log(response);
 									 });

@@ -3,15 +3,12 @@
 	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
 	<script src="jquery-2.1.1.min.js"></script>
 	<script src="main.js"></script>
-
-	<!--http://stackoverflow.com/questions/3282505/highlight-text-as-you-type-on-textarea?rq=1-->
-	
 </head>
 <body>
 	<h1>Post Checker</h1>
 	<div class="textarea textareaBorder">
-    <textarea id="myTextarea" onkeyup="input_hack();" class="textarea realTextarea"></textarea>
-    <div id="myOtherTextarea" class="textarea overlayTextarea textareaBorder"></div>
+    <textarea id="postArea" onkeyup="input_hack();" class="textarea realTextarea"></textarea>
+    <div id="otherPostArea" class="textarea overlayTextarea textareaBorder"></div>
 	</div>
 	<button id="submitter">Submit</button>
 </body>
