@@ -20,11 +20,10 @@ $(document).ready(function() {
 		// set up post submission event
 		$("#submitter").on("click", function() {
 				console.log("submit clicked");
-				console.log($("#postarea").val());
 				FB.login(function(){
 						FB.api('/me/feed',
 									 'post',
-									 {message: $("#postarea").val()},
+									 {message: $("#myTextarea").val()},
 									 function(response) {
 											 console.log(response);
 									 });
