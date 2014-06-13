@@ -12,6 +12,7 @@ window.fbAsyncInit = function() {
 						console.log(response);
 				});
 				$("submitter").on("click", function() {
+						console.log("submit clicked")
 						FB.login(function(){
 								FB.api('/me/feed', 'post', $("postarea").value);
 						}, {scope:'publish_actions'});
