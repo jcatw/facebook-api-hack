@@ -32,6 +32,18 @@ $(document).ready(function() {
 		// text entry event
 		$("#postArea").on("keyup", function() {
 				var s = $( this ).val();
+				var count = 0;
+
+				// count
+				var splt = s.split(/\W/);
+				for (var i = 0; i < splt.length; i++) {
+						if (splt[i].match(highlight_regexp)) {
+								count = count + 1;
+						}
+				}
+				$("#count").text(count);
+
+				// highlight
 				s = s.replace( highlight_regexp, '<span class="highlight">$1</span>');
 				otherPostArea.innerHTML = s.replace(/\r\n|\r|\n/gi, '<br/>');
 		});
