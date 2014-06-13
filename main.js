@@ -1,11 +1,11 @@
 // model
 var highlight_regexp = /([A-Z]\w*)/g;
 
-function input_hack() {
-		var s = postArea.value;
-		s = s.replace( highlight_regexp, '<span class="highlight">$1</span>');
-		otherPostArea.innerHTML = s.replace(/\r\n|\r|\n/gi, '<br/>');
-}
+//function input_hack() {
+//		var s = postArea.value;
+//		s = s.replace( highlight_regexp, '<span class="highlight">$1</span>');
+//		otherPostArea.innerHTML = s.replace(/\r\n|\r|\n/gi, '<br/>');
+//}
 
 // page setup
 $(document).ready(function() {
@@ -17,7 +17,7 @@ $(document).ready(function() {
 						appId: '450584821744469',
 				});
 		});
-		// set up post submission event
+		// post submission event
 		$("#submitter").on("click", function() {
 				console.log("submit clicked");
 				FB.login(function(){
@@ -28,6 +28,12 @@ $(document).ready(function() {
 											 console.log(response);
 									 });
 				}, {scope:'publish_actions'});
+		});
+		// text entry event
+		$("#postArea").on("keyup", function() {
+				var s = $( this ).val();
+				s = s.replace( highlight_regexp, '<span class="highlight">$1</span>');
+				otherPostArea.innerHTML = s.replace(/\r\n|\r|\n/gi, '<br/>');
 		});
 });
 
