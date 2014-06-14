@@ -1,5 +1,5 @@
-.textarea { font-family:arial; font-size:12px; border:0; width:700px; height:200px; }
 .realTextarea { margin:0; background:transparent; position: absolute; z-index:999; }
-.overlayTextarea { margin:0; position:absolute; top:1; left:1; z-index:998; }
-.textareaBorder { border:groove 1px #ccc; position:relative; width:702px; height:202px; }
+.overlayTextarea { margin:0; position:absolute; top:2; left:2; z-index:998; }
+.textarea { border:0; width:700px; height:200px; }
+.textareaBorder { position:relative; width:702px; height:202px; }
 .highlight { background: yellow; }
