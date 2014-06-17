@@ -6,18 +6,29 @@
 		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="style.css" />
 		<script src="jquery-2.1.1.min.js"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-		<script src="main.js"></script>
+		
 	</head>
 	<body>
 		<h1>Post Checker</h1>
-		<div class="form-control textarea textareaBorder">
-			<textarea id="postArea" class="textarea realTextarea" placeholder="Enter your post here..."></textarea>
-			<div id="otherPostArea" class="textarea overlayTextarea textareaBorder"></div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-6">
+					<textarea class="form-control" id="postArea" placeholder="Enter your post here..." rows="10"></textarea>
+				</div>
+				<div class="col-xs-6">
+					<div id="postMirror" class="well"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-1">
+					<button id="submitter" type="submit" class="btn btn-default btn-xs">Submit</button>
+				</div>
+				<div class="col-xs-2">
+					Count <span id=count class="badge">0</span>
+				</div>
+			</div>
 		</div>
-		<br/><br/>
-		<button id="submitter">Submit</button>
-		<br/>
-		Count: <span id=count>0</span>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="main.js"></script>
 	</body>
 </html>
