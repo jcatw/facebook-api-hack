@@ -1,12 +1,6 @@
 // model
 var highlight_regexp = /([A-Z]\w*)/g;
 
-//function input_hack() {
-//		var s = postArea.value;
-//		s = s.replace( highlight_regexp, '<span class="highlight">$1</span>');
-//		otherPostArea.innerHTML = s.replace(/\r\n|\r|\n/gi, '<br/>');
-//}
-
 // page setup
 $(document).ready(function() {
 		console.log("doc ready");
