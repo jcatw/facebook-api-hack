@@ -1,11 +1,13 @@
 // features
 function featureFactory(regexp, description) {
-		return {'regexp': regexp, 'description': description};
+		return {'regexp': regexp, 'description': description, 'count': 0};
 }
 		
 var features = [featureFactory(/([A-Z]\w*)/g, "Capitalized"),
 								featureFactory(/(spaz)/g, "spaz"),
 								featureFactory(/(Apple|Orange)/g, "Specific Fruit")];
+
+
 								
 
 // page setup
@@ -41,18 +43,25 @@ $(document).ready(function() {
 				//word += character;
 				var s = $( this ).val();
 				//if(wordbound.test(character)) {
-				var count = 0;
+				
 						
 				// count
 				var splt = s.split(/\W/);
+				for (var j = 0; j < features.length; j++)
+						features[j].count = 0;
+				
 				for (var i = 0; i < splt.length; i++) {
+						var countext="";
 						for(var j = 0; j < features.length; j++) {
+								
 								if (splt[i].match(features[j].regexp)) {
-										count = count + 1;
+										features[j].count += 1;
 								}
+								countext = countext.concat(features[j].count).concat(" ");
 						}
 				}
-				$("#count").text(count);
+				$("#count").text(countext);
+				
 				
 				// highlight
 				
@@ -68,6 +77,10 @@ $(document).ready(function() {
 				//else
 
 		});
+		var countext = "";
+		for (var j = 0; j < features.length; j++)
+				countext = countext.concat(features[j].count).concat(" ");
+		$("#count").text(countext);
 });
 
 
